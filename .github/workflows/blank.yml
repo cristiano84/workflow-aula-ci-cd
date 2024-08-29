@@ -1,0 +1,33 @@
+name: Branch Checkout and System Info
+
+on:
+  push:
+    branches:
+      - your-branch-name
+  pull_request:
+    branches:
+      - your-branch-name
+
+jobs:
+  JobLinux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Display README.md content
+        run: cat README.md
+
+      - name: Check Kernel version
+        run: uname -a
+
+  JobWindows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Print Windows version
+        run: |
+          echo Windows Version:
+          Get-CimInstance 
