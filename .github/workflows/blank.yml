@@ -3,10 +3,10 @@ name: Branch Checkout and System Info
 on:
   push:
     branches:
-      - your-branch-name
+      - main
   pull_request:
     branches:
-      - your-branch-name
+      - main
 
 jobs:
   JobLinux:
